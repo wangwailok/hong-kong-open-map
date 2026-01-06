@@ -1,26 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-HK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hong Kong Open Map - Free Open Source Map Library for HK</title>
+  <title>香港開放地圖 - 免費開源、唔使 API Key 嘅香港地圖庫</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Free, open-source Hong Kong map component library. Uses official Lands Department vector tiles. No API key required. React & Vanilla JS support. Perfect Google Maps alternative for Hong Kong applications.">
-  <meta name="keywords" content="Hong Kong map, HK map, open source map, React map component, MapLibre, Lands Department, vector tiles, free map API, Google Maps alternative">
+  <meta name="description" content="免費開源嘅香港地圖組件庫，用地政總署官方圖磚。唔使 API Key，支援 React 同埋原生 JS。Google Maps 以外最好嘅免費選擇。">
+  <meta name="keywords" content="香港地圖, HK map, 開源地圖, React 地圖, 地政總署, 免費地圖 API, Google Maps 替代">
   <meta name="author" content="Lok Wang">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://wangwailok.com/hong-kong-open-map/">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://wangwailok.com/hong-kong-open-map/">
-  <meta property="og:title" content="Hong Kong Open Map - Free Open Source Map Library">
-  <meta property="og:description" content="Free, open-source Hong Kong map component. Uses official government vector tiles. No API key. React & Vanilla JS.">
-  <meta property="og:image" content="https://wangwailok.com/hong-kong-open-map/og-image.png">
-  <meta property="og:locale" content="en_HK">
-  
-  <!-- JSON-LD Structured Data omitted for brevity, keeping existing logic -->
+  <meta property="og:title" content="香港開放地圖 - 免費開源地圖庫">
+  <meta property="og:description" content="用政府官方圖磚，唔使 API Key，React 同 JS 都用得。">
+  <meta property="og:locale" content="zh_HK">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +34,7 @@
     }
     
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 15px; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 15px; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     header { padding: 40px 0; border-bottom: 1px solid var(--border); }
     .header-content { display: flex; align-items: center; justify-content: space-between; }
@@ -110,11 +105,6 @@
     .coords-output { padding: 12px 20px; background: var(--bg-code); border-radius: 0 0 7px 7px; }
     .coords-output code { font-size: 0.75rem; color: var(--text-code); display: block; white-space: pre-wrap; word-break: break-all; }
     
-    .api-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-bottom: 32px; }
-    .api-table th { text-align: left; padding: 14px 16px; background: var(--bg-secondary); border: 1px solid var(--border); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); }
-    .api-table td { padding: 14px 16px; border: 1px solid var(--border); vertical-align: top; }
-    .api-table .prop-name { font-family: 'JetBrains Mono', monospace; font-weight: 500; color: var(--text); }
-    
     footer { padding: 48px 0; text-align: center; color: var(--text-secondary); font-size: 0.85rem; border-top: 1px solid var(--border); }
     footer a { color: var(--text); text-decoration: none; }
     .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; }
@@ -140,12 +130,12 @@
   <div class="container">
     <header>
       <div class="header-content">
-        <h1>hong-kong-open-map</h1>
+        <h1>香港開放地圖</h1>
         <div class="header-links">
           <div class="lang-switcher">
-            <a href="index.html" class="active">EN</a>
+            <a href="index.html">EN</a>
             <span style="color: var(--border)">|</span>
-            <a href="zh-hk.html">廣東話</a>
+            <a href="zh-hk.html" class="active">廣東話</a>
           </div>
           <a href="https://github.com/wangwailok/hong-kong-open-map">GitHub</a>
           <a href="https://www.npmjs.com/package/hong-kong-open-map">npm</a>
@@ -154,36 +144,36 @@
     </header>
     
     <div class="hero">
-      <h2>Hong Kong Open Map</h2>
-      <p>Built for the <strong>vibe coding</strong> community. Free, open-source, no API key required.</p>
+      <h2>香港開放地圖</h2>
+      <p>專門為 <strong>vibe coding</strong> 同好而設。免費開源、唔使 API Key、完全放任用。</p>
       <div class="hero-badges">
-        <span class="badge">🆓 Free Forever</span>
-        <span class="badge">🏛️ Official HK Gov Data</span>
-        <span class="badge">⚡ No Bandwidth Cost</span>
+        <span class="badge">🆓 永遠免費</span>
+        <span class="badge">🏛️ 政府官方圖磚</span>
+        <span class="badge">⚡ 零頻寬成本</span>
       </div>
     </div>
     
     <section>
-      <h3>Why I Built This</h3>
+      <h3>點解我要整呢個？</h3>
       <div style="max-width: 800px;">
         <p style="color: var(--text-secondary); line-height: 1.8;">
-          I created Hong Kong Open Map for the <strong>vibe coding</strong> community – developers who build for fun, for learning, or for side projects.
+          我整呢個「香港開放地圖」係想幫到班 <strong>vibe coding</strong> 嘅朋友 – 即係班純粹為興趣、想學嘢、或者整下 side project 嘅 developer。
         </p>
         <p style="color: var(--text-secondary); line-height: 1.8; margin-top: 12px;">
-          <strong>The problem:</strong> Google Maps is expensive. Sometimes you just want to show your company's location on a contact page. But when traffic grows, you hit API limits and face unexpected bills.
+          <strong>問題係：</strong>Google Maps 真係好貴。有時你只係想喺「聯絡我哋」個頁騷下個地址，但當流量一多，你就會過咗 API limit，跟住就要俾筆你預唔到嘅昂貴費用。
         </p>
         <p style="color: var(--text-secondary); line-height: 1.8; margin-top: 12px;">
-          <strong>The solution:</strong> Use official government tiles from the Lands Department. It's free, fast, accurate, and you don't pay for bandwidth – the government hosts the tiles.
+          <strong>解決方法：</strong>直接用地政總署嘅官方地圖圖磚。免費、快、準，而且你唔使俾頻寬錢 – 因為圖磚係由政府 server 託管。
         </p>
       </div>
       
       <div style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; margin-top: 32px;">
-        <p><strong>Who is this for?</strong> React developers, bloggers, WordPress users, small business owners – anyone who needs a simple Hong Kong map without the hassle of API keys.</p>
+        <p><strong>啱邊個用？</strong> React 開發者、寫 Blog 嘅人、WordPress 用家、小店老闆 – 總之任何需要簡單地圖又唔想煩 API Key 嘅人。</p>
       </div>
     </section>
     
     <section>
-      <h3>Installation</h3>
+      <h3>安裝方法</h3>
       <div class="install-grid">
         <div class="install-option" onclick="copyToClipboard('npm install hong-kong-open-map')">
           <div class="label"># npm</div>
@@ -203,17 +193,17 @@
         </div>
       </div>
       
-      <h4>CDN / Direct HTML Usage</h4>
+      <h4>直接喺 HTML 用 (CDN)</h4>
       <div class="code-block">
         <div class="code-header"><span class="filename">index.html</span><button class="copy-btn" onclick="copyCode('cdn-code')">copy</button></div>
-        <pre><code id="cdn-code"><span class="cmt">&lt;!-- 1. Include MapLibre GL --&gt;</span>
+        <pre><code id="cdn-code"><span class="cmt">&lt;!-- 1. 裝好 MapLibre GL --&gt;</span>
 <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="attr">href</span>=<span class="str">"https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css"</span><span class="tag">&gt;</span>
 <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="str">"https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
 
-<span class="cmt">&lt;!-- 2. Include hong-kong-open-map --&gt;</span>
+<span class="cmt">&lt;!-- 2. 引入個庫 --&gt;</span>
 <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="str">"https://unpkg.com/hong-kong-open-map/dist/vanilla.umd.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
 
-<span class="cmt">&lt;!-- 3. Create container and initialize --&gt;</span>
+<span class="cmt">&lt;!-- 3. 開個 container 執佢出嚟 --&gt;</span>
 <span class="kw">const</span> map = <span class="kw">new</span> <span class="fn">HKMap</span>(<span class="str">'map'</span>, {
   <span class="prop">center</span>: [<span class="num">114.1694</span>, <span class="num">22.3193</span>],
   <span class="prop">zoom</span>: <span class="num">12</span>
@@ -222,7 +212,7 @@
     </section>
     
     <section>
-      <h3>React Usage</h3>
+      <h3>React 用法</h3>
       <div class="code-block">
         <div class="code-header"><span class="filename">App.tsx</span><button class="copy-btn" onclick="copyCode('react-code')">copy</button></div>
         <pre><code id="react-code"><span class="kw">import</span> { HKMap, HKMarker } <span class="kw">from</span> <span class="str">'hong-kong-open-map'</span>;
@@ -230,7 +220,7 @@
 <span class="kw">export default function</span> <span class="fn">App</span>() {
   <span class="kw">return</span> (
     <span class="punc">&lt;</span><span class="fn">HKMap</span> <span class="prop">center</span>=<span class="punc">{</span>[<span class="num">114.1694</span>, <span class="num">22.3193</span>]<span class="punc">}</span> <span class="prop">zoom</span>=<span class="punc">{</span><span class="num">12</span><span class="punc">}</span><span class="punc">&gt;</span>
-      <span class="punc">&lt;</span><span class="fn">HKMarker</span> <span class="prop">position</span>=<span class="punc">{</span>[<span class="num">114.1694</span>, <span class="num">22.3193</span>]<span class="punc">}</span> <span class="prop">title</span>=<span class="str">"Victoria Harbour"</span> <span class="punc">/&gt;</span>
+      <span class="punc">&lt;</span><span class="fn">HKMarker</span> <span class="prop">position</span>=<span class="punc">{</span>[<span class="num">114.1694</span>, <span class="num">22.3193</span>]<span class="punc">}</span> <span class="prop">title</span>=<span class="str">"維多利亞港"</span> <span class="punc">/&gt;</span>
     <span class="punc">&lt;/</span><span class="fn">HKMap</span><span class="punc">&gt;</span>
   );
 }</code></pre>
@@ -238,34 +228,34 @@
     </section>
     
     <section>
-      <h3>Live Demo</h3>
+      <h3>實時演示</h3>
       <div class="demo-container">
         <div class="demo-map" id="demo-map"></div>
         <div class="demo-controls">
           <div class="control-row">
-            <span class="control-label">theme</span>
+            <span class="control-label">主題 (theme)</span>
             <select id="ctrl-theme" onchange="updateDemo()">
-              <option value="light">"light"</option>
-              <option value="dark">"dark"</option>
+              <option value="light">"淺色 light"</option>
+              <option value="dark">"深色 dark"</option>
             </select>
           </div>
           <div class="control-row">
-            <span class="control-label">language</span>
+            <span class="control-label">語言 (language)</span>
             <select id="ctrl-lang" onchange="updateDemo()">
-              <option value="en">"en"</option>
-              <option value="zh">"zh"</option>
+              <option value="zh">"中文 zh"</option>
+              <option value="en">"英文 en"</option>
             </select>
           </div>
           <div class="control-row">
-            <span class="control-label">zoom</span>
+            <span class="control-label">縮放 (zoom)</span>
             <select id="ctrl-zoom" onchange="updateDemo()">
-              <option value="10">10</option>
-              <option value="12" selected>12</option>
-              <option value="14">14</option>
+              <option value="10">10 (全港)</option>
+              <option value="12" selected>12 (市中心)</option>
+              <option value="14">14 (細節)</option>
             </select>
           </div>
           <div class="control-row">
-            <span class="control-label">showLabels</span>
+            <span class="control-label">騷唔騷標籤</span>
             <input type="checkbox" id="ctrl-labels" checked onchange="updateDemo()">
           </div>
         </div>
@@ -273,26 +263,26 @@
     </section>
     
     <section>
-      <h3>Pin Placer Tool</h3>
-      <p style="color: var(--text-secondary); margin-bottom: 24px;">Click on the map to place pins. Export coordinates for use in your app.</p>
+      <h3>搵位工具 (Pin Placer)</h3>
+      <p style="color: var(--text-secondary); margin-bottom: 24px;">喺地圖篤一下就放粒 Pin，跟住就可以直接 Copy 啲座標返去用。</p>
       
       <div class="tool-section">
         <div class="tool-map" id="pin-map">
           <div class="map-status">
-            <div class="status-badge" id="pin-mode-badge"><span class="status-dot"></span><span>Pin Mode: OFF</span></div>
-            <div class="status-badge" id="pan-lock-badge"><span class="status-dot"></span><span>Pan: Unlocked</span></div>
+            <div class="status-badge" id="pin-mode-badge"><span class="status-dot"></span><span>放 Pin 模式: 熄咗</span></div>
+            <div class="status-badge" id="pan-lock-badge"><span class="status-dot"></span><span>移動地圖: 冇鎖</span></div>
           </div>
         </div>
         <div class="tool-panel">
-          <div class="panel-header"><span>Pin Settings</span><button class="btn danger" onclick="clearAllPins()">Clear All</button></div>
+          <div class="panel-header"><span>Pin 設定</span><button class="btn danger" onclick="clearAllPins()">清晒佢</button></div>
           <div class="panel-body">
             <div class="tool-controls">
-              <div class="tool-row"><span class="tool-label">Pin Mode</span><div class="btn-group"><button class="btn" id="btn-pin-off" onclick="setPinMode(false)">OFF</button><button class="btn" id="btn-pin-on" onclick="setPinMode(true)">ON</button></div></div>
-              <div class="tool-row"><span class="tool-label">Lock Pan</span><div class="btn-group"><button class="btn active" id="btn-pan-unlock" onclick="setLockPan(false)">Unlock</button><button class="btn" id="btn-pan-lock" onclick="setLockPan(true)">Lock</button></div></div>
-              <div class="tool-row"><span class="tool-label">Pin Color</span><input type="color" id="pin-color" value="#000000" /></div>
+              <div class="tool-row"><span class="tool-label">放 Pin 模式</span><div class="btn-group"><button class="btn" id="btn-pin-off" onclick="setPinMode(false)">熄</button><button class="btn" id="btn-pin-on" onclick="setPinMode(true)">開</button></div></div>
+              <div class="tool-row"><span class="tool-label">鎖死地圖</span><div class="btn-group"><button class="btn active" id="btn-pan-unlock" onclick="setLockPan(false)">冇鎖</button><button class="btn" id="btn-pan-lock" onclick="setLockPan(true)">鎖死</button></div></div>
+              <div class="tool-row"><span class="tool-label">Pin 顏色</span><input type="color" id="pin-color" value="#000000" /></div>
             </div>
-            <div class="panel-header"><span>Pins (<span id="pin-count">0</span>)</span><button class="btn" onclick="exportPins()">Export JSON</button></div>
-            <div class="pins-list" id="pins-list"><div class="pins-list-empty">No pins yet. Click on the map.</div></div>
+            <div class="panel-header"><span>Pin 數量 (<span id="pin-count">0</span>)</span><button class="btn" onclick="exportPins()">導出 JSON</button></div>
+            <div class="pins-list" id="pins-list"><div class="pins-list-empty">未有 Pin 喎，試下喺地圖篤一下。</div></div>
             <div class="coords-output"><code id="coords-preview">[]</code></div>
           </div>
         </div>
@@ -300,38 +290,38 @@
     </section>
     
     <section>
-      <h3>Why Choose Hong Kong Open Map?</h3>
+      <h3>點解要揀「香港開放地圖」？</h3>
       <div class="features-grid">
-        <div class="feature-card"><h4>🆓 100% Free</h4><p>No API keys, no usage limits, no hidden costs. Open source under MIT license.</p></div>
-        <div class="feature-card"><h4>🏛️ Official Data</h4><p>Uses official vector tiles from HK Lands Department for maximum accuracy.</p></div>
-        <div class="feature-card"><h4>🌐 Bilingual Labels</h4><p>Switch between Traditional Chinese and English labels effortlessly.</p></div>
-        <div class="feature-card"><h4>⚡ High Performance</h4><p>Built on MapLibre GL JS with WebGL rendering for smooth 60fps animations.</p></div>
-        <div class="feature-card"><h4>🔧 Dev Friendly</h4><p>TypeScript, React, Vanilla JS support. Works with modern build tools.</p></div>
-        <div class="feature-card"><h4>📱 Mobile Ready</h4><p>Responsive design with native touch gestures and pinch-to-zoom.</p></div>
+        <div class="feature-card"><h4>🆓 100% 免費</h4><p>唔使 API Key、冇使用限制、冇隱藏收費。MIT 開源協議，放心用。</p></div>
+        <div class="feature-card"><h4>🏛️ 官方數據</h4><p>用地政總署官方矢量圖磚，保證係最準確嘅香港資料。</p></div>
+        <div class="feature-card"><h4>🌐 雙語標籤</h4><p>繁體中文定英文標籤？一秒就切換到。</p></div>
+        <div class="feature-card"><h4>⚡ 輕快流暢</h4><p>用 MapLibre 同 WebGL 渲染，60fps 順到爆。</p></div>
+        <div class="feature-card"><h4>🔧 開發者 Friend</h4><p>支援 TypeScript、React 同埋 JS。啱晒現代嘅開發工具。</p></div>
+        <div class="feature-card"><h4>📱 手機都得</h4><p>響應式設計，支援手勢、Pinch zoom，電話用都好順。</p></div>
       </div>
       
-      <h4 style="margin-top: 40px;">Framework Comparison</h4>
+      <h4 style="margin-top: 40px;">唔同地圖嘅比較</h4>
       <table class="comparison-table">
-        <thead><tr><th>Feature</th><th>HK Open Map</th><th>Google Maps</th><th>Leaflet + OSM</th></tr></thead>
+        <thead><tr><th>功能</th><th>香港開放地圖</th><th>Google Maps</th><th>Leaflet + OSM</th></tr></thead>
         <tbody>
-          <tr><td>Cost</td><td><span class="check">✓</span> Free</td><td><span class="cross">✗</span> Pay per request</td><td><span class="check">✓</span> Free</td></tr>
-          <tr><td>API Key</td><td><span class="check">✓</span> No</td><td><span class="cross">✗</span> Yes</td><td><span class="check">✓</span> No</td></tr>
-          <tr><td>HK Accuracy</td><td><span class="check">✓</span> Official</td><td>Good</td><td>Variable</td></tr>
-          <tr><td>Bandwidth</td><td><span class="check">✓</span> Gov hosted</td><td><span class="cross">✗</span> Counts to limit</td><td><span class="check">✓</span> Free</td></tr>
+          <tr><td>費用</td><td><span class="check">✓</span> 永遠免費</td><td><span class="cross">✗</span> 按量收費</td><td><span class="check">✓</span> 免費</td></tr>
+          <tr><td>API Key</td><td><span class="check">✓</span> 唔使</td><td><span class="cross">✗</span> 要</td><td><span class="check">✓</span> 唔使</td></tr>
+          <tr><td>香港準確度</td><td><span class="check">✓</span> 官方最準</td><td>好</td><td>時好時壞</td></tr>
+          <tr><td>託管</td><td><span class="check">✓</span> 政府託管</td><td><span class="cross">✗</span> 計流量</td><td><span class="check">✓</span> 免費</td></tr>
         </tbody>
       </table>
     </section>
     
     <section>
-      <h3>FAQ</h3>
+      <h3>常見問題 FAQ</h3>
       <div class="faq-list">
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)"><span>Is it free to use?</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
-          <div class="faq-answer"><p>Yes, it's completely free and open source. The tiles are provided by the government at no cost for personal and commercial projects.</p></div>
+          <button class="faq-question" onclick="toggleFaq(this)"><span>真係免費？</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="faq-answer"><p>係呀，真係完全免費同開源。圖磚係由香港政府免費提供俾大家用，無論係個人定商業項目都得。</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)"><span>Do I need an API key?</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
-          <div class="faq-answer"><p>No API key is required. Just install and use it immediately.</p></div>
+          <button class="faq-question" onclick="toggleFaq(this)"><span>點解唔使 API Key？</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="faq-answer"><p>因爲我哋直接對接政府嘅 Open Data。裝咗落嚟就用得，唔使去註冊申請埋啲煩嘢。</p></div>
         </div>
       </div>
     </section>
@@ -340,9 +330,9 @@
       <div class="footer-links">
         <a href="https://github.com/wangwailok/hong-kong-open-map">GitHub</a>
         <a href="https://www.npmjs.com/package/hong-kong-open-map">npm</a>
-        <a href="https://www.wangwailok.com/">Author</a>
+        <a href="https://www.wangwailok.com/">作者網站</a>
       </div>
-      <p>Created by Lok Wang · Map data © Lands Department, HKSAR Government · MIT License</p>
+      <p>Created by Lok Wang · 地圖數據 © 香港特區政府地政總署 · MIT License</p>
     </footer>
   </div>
   
@@ -351,15 +341,15 @@
     const RASTER_TILE = 'https://mapapi.geodata.gov.hk/gs/api/v1.0.0/xyz/basemap/wgs84/{z}/{x}/{y}.png';
     const RASTER_LABEL_ZH = 'https://mapapi.geodata.gov.hk/gs/api/v1.0.0/xyz/label/hk/tc/wgs84/{z}/{x}/{y}.png';
     const RASTER_LABEL_EN = 'https://mapapi.geodata.gov.hk/gs/api/v1.0.0/xyz/label/hk/en/wgs84/{z}/{x}/{y}.png';
-    function createStyle(lang = 'en', showLabels = true) {
+    function createStyle(lang = 'zh', showLabels = true) {
       const style = { version: 8, sources: { 'hk-basemap': { type: 'raster', tiles: [RASTER_TILE], tileSize: 256, attribution: 'wangwailok.com | © Lands Department' } }, layers: [{ id: 'basemap', type: 'raster', source: 'hk-basemap' }] };
       if (showLabels) { style.sources['hk-label'] = { type: 'raster', tiles: [lang === 'en' ? RASTER_LABEL_EN : RASTER_LABEL_ZH], tileSize: 256 }; style.layers.push({ id: 'labels', type: 'raster', source: 'hk-label' }); }
       return style;
     }
     let map = null, pinMap = null;
     function initMaps() {
-      map = new maplibregl.Map({ container: 'demo-map', style: createStyle('en', true), center: [114.1694, 22.3193], zoom: 12 });
-      pinMap = new maplibregl.Map({ container: 'pin-map', style: createStyle('en', true), center: [114.1694, 22.3193], zoom: 12 });
+      map = new maplibregl.Map({ container: 'demo-map', style: createStyle('zh', true), center: [114.1694, 22.3193], zoom: 12 });
+      pinMap = new maplibregl.Map({ container: 'pin-map', style: createStyle('zh', true), center: [114.1694, 22.3193], zoom: 12 });
       pinMap.on('click', (e) => { if (pinMode) addPin(e.lngLat.lng, e.lngLat.lat); });
     }
     function updateDemo() {
@@ -367,9 +357,12 @@
       const showLabels = document.getElementById('ctrl-labels').checked;
       map.setStyle(createStyle(lang, showLabels));
     }
-    // Existing logic for pins, clipboard, etc. (simplified for example)
     let pinMode = false, pins = [], pinMarkers = [];
-    function setPinMode(e) { pinMode = e; document.getElementById('pin-map').classList.toggle('pin-mode', e); }
+    function setPinMode(e) { 
+        pinMode = e; 
+        document.getElementById('pin-map').classList.toggle('pin-mode', e);
+        document.getElementById('pin-mode-badge').querySelector('span:last-child').textContent = '放 Pin 模式: ' + (e ? '開咗' : '熄咗');
+    }
     function addPin(lng, lat) { 
       const marker = new maplibregl.Marker({ color: document.getElementById('pin-color').value }).setLngLat([lng, lat]).addTo(pinMap);
       pins.push({ position: [lng, lat] }); pinMarkers.push(marker); updatePinsList();

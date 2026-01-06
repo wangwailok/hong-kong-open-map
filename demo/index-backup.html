@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hong Kong Open Map - Free Open Source Map Library for HK | 香港開放地圖</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Free, open-source Hong Kong map component library. Uses official Lands Department vector tiles. No API key required. React & Vanilla JS support. Perfect Google Maps alternative for Hong Kong applications.">
+  <meta name="keywords" content="Hong Kong map, HK map, 香港地圖, open source map, React map component, MapLibre, Lands Department, vector tiles, 地政總署, free map API, Google Maps alternative">
+  <meta name="author" content="Lok Wang">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wangwailok.com/hong-kong-open-map/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wangwailok.com/hong-kong-open-map/">
+  <meta property="og:title" content="Hong Kong Open Map - Free Open Source Map Library">
+  <meta property="og:description" content="Free, open-source Hong Kong map component. Uses official government vector tiles. No API key. React & Vanilla JS.">
+  <meta property="og:image" content="https://wangwailok.com/hong-kong-open-map/og-image.png">
+  <meta property="og:locale" content="en_HK">
+  <meta property="og:locale:alternate" content="zh_HK">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://wangwailok.com/hong-kong-open-map/">
+  <meta property="twitter:title" content="Hong Kong Open Map - Free Open Source Map Library">
+  <meta property="twitter:description" content="Free, open-source Hong Kong map component. Uses official government vector tiles. No API key required.">
+  <meta property="twitter:image" content="https://wangwailok.com/hong-kong-open-map/og-image.png">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://wangwailok.com/hong-kong-open-map/#software",
+        "name": "Hong Kong Open Map",
+        "alternateName": ["hong-kong-open-map", "香港開放地圖"],
+        "description": "Free, open-source map component library for Hong Kong applications. Uses official Lands Department vector tiles with MapLibre GL JS. Supports React and Vanilla JavaScript.",
+        "url": "https://wangwailok.com/hong-kong-open-map/",
+        "codeRepository": "https://github.com/user/hong-kong-open-map",
+        "programmingLanguage": ["TypeScript", "JavaScript", "React"],
+        "runtimePlatform": "Browser",
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@id": "https://www.wangwailok.com/#person"
+        },
+        "creator": {
+          "@id": "https://www.wangwailok.com/#person"
+        },
+        "dateCreated": "2024-01-01",
+        "dateModified": "2026-01-06",
+        "keywords": ["Hong Kong", "map", "React", "MapLibre", "vector tiles", "open source", "Lands Department"],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://wangwailok.com/hong-kong-open-map/#webpage",
+        "url": "https://wangwailok.com/hong-kong-open-map/",
+        "name": "Hong Kong Open Map Documentation",
+        "description": "Documentation and examples for Hong Kong Open Map - a free, open-source map component library.",
+        "inLanguage": ["en", "zh-HK"],
+        "author": {
+          "@id": "https://www.wangwailok.com/#person"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "url": "https://wangwailok.com/",
+          "name": "Lok Wang"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.wangwailok.com/#person",
+        "name": "Lok Wang",
+        "url": "https://www.wangwailok.com/",
+        "sameAs": [
+          "https://github.com/wangwailok"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://wangwailok.com/hong-kong-open-map/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Hong Kong Open Map free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Hong Kong Open Map is completely free and open source under the MIT license. The map tiles are provided by the Hong Kong Lands Department at no cost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need an API key to use Hong Kong Open Map?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No API key is required. Unlike Google Maps, you can use Hong Kong Open Map immediately without registration or API keys."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use Hong Kong Open Map for commercial projects?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, both the library (MIT license) and the government map tiles can be used for commercial projects. You must include the Lands Department attribution."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between Hong Kong Open Map and Google Maps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hong Kong Open Map uses official government vector tiles specifically designed for Hong Kong, is completely free with no API key required, and offers better accuracy for Hong Kong locations. Google Maps requires API keys and has usage limits."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Hong Kong Open Map support Chinese labels?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Hong Kong Open Map supports both Traditional Chinese (繁體中文) and English labels. You can switch between languages using the language prop."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What frameworks does Hong Kong Open Map support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hong Kong Open Map supports React (with TypeScript), Vanilla JavaScript, and can be embedded via iFrame. It works with Next.js, Vite, and other modern build tools."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://wangwailok.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Hong Kong Open Map",
+            "item": "https://wangwailok.com/hong-kong-open-map/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.0.0/dist/maplibre-gl.css">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-secondary: #f8f9fa;
+      --bg-code: #1a1a1a;
+      --text: #111111;
+      --text-secondary: #666666;
+      --text-code: #e0e0e0;
+      --border: #e0e0e0;
+      --accent: #000000;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* Header */
+    header {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .header-links {
+      display: flex;
+      gap: 24px;
+    }
+    
+    .header-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    
+    .header-links a:hover {
+      color: var(--text);
+    }
+    
+    /* Hero */
+    .hero {
+      padding: 80px 0;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      color: var(--text-secondary);
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto 12px;
+    }
+    
+    .hero-badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    
+    .badge {
+      display: inline-block;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+    
+    /* Section */
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    section:last-of-type {
+      border-bottom: none;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+    }
+    
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    
+    /* Installation */
+    .install-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    
+    @media (max-width: 768px) {
+      .install-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    .install-option {
+      background: var(--bg-code);
+      border-radius: 8px;
+      padding: 16px;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+      border: 1px solid transparent;
+    }
+    
+    .install-option:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .install-option .label {
+      color: #6a9955;
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 6px;
+    }
+    
+    .install-option code {
+      color: var(--text-code);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      display: block;
+    }
+    
+    .install-option .cmd {
+      color: #dcdcaa;
+    }
+    
+    .install-option .pkg {
+      color: #ce9178;
+    }
+    
+    /* Code Block */
+    .code-block {
+      background: var(--bg-code);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      border-bottom: 1px solid #333;
+      background: #252525;
+    }
+    
+    .code-header .filename {
+      color: #999;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+    }
+    
+    .copy-btn {
+      background: transparent;
+      border: 1px solid #444;
+      color: #888;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.72rem;
+      font-family: 'JetBrains Mono', monospace;
+      transition: all 0.2s;
+      text-transform: lowercase;
+    }
+    
+    .copy-btn:hover {
+      border-color: #666;
+      color: #ccc;
+    }
+    
+    pre {
+      margin: 0;
+      padding: 20px;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-code);
+    }
+    
+    .kw { color: #569cd6; }
+    .str { color: #ce9178; }
+    .cmt { color: #6a9955; }
+    .fn { color: #dcdcaa; }
+    .num { color: #b5cea8; }
+    .prop { color: #9cdcfe; }
+    .tag { color: #808080; }
+    .attr { color: #9cdcfe; }
+    .punc { color: #808080; }
+    
+    /* Demo */
+    .demo-container {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    
+    @media (max-width: 900px) {
+      .demo-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .demo-map {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      height: 450px;
+      background: #f0f0f0;
+    }
+    
+    .demo-controls {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px 0;
+    }
+    
+    .control-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .control-row:last-child {
+      border-bottom: none;
+    }
+    
+    .control-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .control-label code {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+    
+    select {
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.85rem;
+      font-family: 'JetBrains Mono', monospace;
+      cursor: pointer;
+      min-width: 100px;
+    }
+    
+    input[type="range"] {
+      width: 100px;
+      cursor: pointer;
+      accent-color: #000;
+    }
+    
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: #000;
+    }
+    
+    /* Pin Placer Tool */
+    .tool-section {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    
+    @media (max-width: 900px) {
+      .tool-section {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .tool-map {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      height: 500px;
+      background: #f0f0f0;
+      position: relative;
+    }
+    
+    .tool-map.pin-mode {
+      cursor: crosshair;
+    }
+    
+    .tool-map.locked {
+      cursor: not-allowed;
+    }
+    
+    .map-status {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 10;
+      display: flex;
+      gap: 8px;
+    }
+    
+    .status-badge {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .status-badge.active {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+    
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+    
+    .status-dot.locked {
+      background: #ef4444;
+    }
+    
+    .tool-panel {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .panel-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .panel-body {
+      padding: 0;
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .tool-controls {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .tool-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    
+    .tool-row:last-child {
+      margin-bottom: 0;
+    }
+    
+    .tool-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    
+    .tool-label small {
+      color: var(--text-secondary);
+      font-weight: 400;
+      display: block;
+      margin-top: 2px;
+    }
+    
+    .btn-group {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .btn {
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+    
+    .btn:hover {
+      border-color: #999;
+    }
+    
+    .btn.active {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+    
+    .btn.danger {
+      color: #ef4444;
+      border-color: #fca5a5;
+    }
+    
+    .btn.danger:hover {
+      background: #fef2f2;
+    }
+    
+    input[type="color"] {
+      width: 36px;
+      height: 36px;
+      padding: 2px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      background: var(--bg);
+    }
+    
+    .icon-selector {
+      display: flex;
+      gap: 6px;
+    }
+    
+    .icon-option {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.15s;
+    }
+    
+    .icon-option:hover {
+      border-color: #999;
+    }
+    
+    .icon-option.active {
+      background: #000;
+      border-color: #000;
+    }
+    
+    .icon-option.active svg {
+      fill: #fff;
+    }
+    
+    .pins-list {
+      flex: 1;
+      overflow-y: auto;
+      max-height: 220px;
+    }
+    
+    .pins-list-empty {
+      padding: 32px 20px;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+    
+    .pin-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      gap: 12px;
+    }
+    
+    .pin-item:last-child {
+      border-bottom: none;
+    }
+    
+    .pin-item:hover {
+      background: var(--bg);
+    }
+    
+    .pin-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    
+    .pin-info {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .pin-coords {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text);
+    }
+    
+    .pin-meta {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+    
+    .pin-actions {
+      display: flex;
+      gap: 4px;
+    }
+    
+    .pin-btn {
+      width: 28px;
+      height: 28px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 4px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .pin-btn:hover {
+      background: var(--border);
+      color: var(--text);
+    }
+    
+    .pin-btn.delete:hover {
+      background: #fef2f2;
+      color: #ef4444;
+    }
+    
+    .coords-output {
+      padding: 12px 20px;
+      background: var(--bg-code);
+      border-radius: 0 0 7px 7px;
+    }
+    
+    .coords-output code {
+      font-size: 0.75rem;
+      color: var(--text-code);
+      display: block;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    
+    /* API Reference */
+    .api-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-bottom: 32px;
+    }
+    
+    .api-table th {
+      text-align: left;
+      padding: 14px 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      font-weight: 600;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+    }
+    
+    .api-table td {
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+    
+    .api-table tr:hover td {
+      background: var(--bg-secondary);
+    }
+    
+    .api-table .prop-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      color: var(--text);
+    }
+    
+    .api-table .type {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: #0969da;
+    }
+    
+    .api-table .default {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+    
+    .api-table .desc {
+      color: var(--text-secondary);
+    }
+    
+    /* Footer */
+    footer {
+      padding: 48px 0;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+    
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    
+    /* FAQ Section */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      width: 100%;
+      padding: 18px 20px;
+      background: var(--bg-secondary);
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+    
+    .faq-question:hover {
+      background: var(--border);
+    }
+    
+    .faq-question svg {
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    
+    .faq-item.open .faq-question svg {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s, padding 0.3s;
+    }
+    
+    .faq-item.open .faq-answer {
+      padding: 20px;
+      max-height: 500px;
+    }
+    
+    .faq-answer p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    
+    .faq-answer code {
+      background: var(--bg-secondary);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+    
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+    
+    @media (max-width: 768px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .feature-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+    }
+    
+    .feature-card h4 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      font-size: 0.9rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    
+    .comparison-table th {
+      background: var(--bg-secondary);
+      font-weight: 600;
+    }
+    
+    .comparison-table .check {
+      color: #22c55e;
+    }
+    
+    .comparison-table .cross {
+      color: #ef4444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <h1>hong-kong-open-map</h1>
+        <div class="header-links">
+          <a href="https://github.com/wangwailok/hong-kong-open-map">GitHub</a>
+          <a href="https://www.npmjs.com/package/hong-kong-open-map">npm</a>
+          <a href="https://api.portal.hkmapservice.gov.hk/disclaimer">Data Source</a>
+        </div>
+      </div>
+    </header>
+    
+    <div class="hero">
+      <h2>Hong Kong Open Map</h2>
+      <p style="font-size: 1.3rem; color: var(--text); margin-bottom: 16px;">香港開放地圖</p>
+      <p>Built for the <strong>vibe coding</strong> community. Free, open-source, no API key required.</p>
+      <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 8px;">為 vibe coding 社群而設 · 免費開源 · 無需 API 金鑰</p>
+      <div class="hero-badges">
+        <span class="badge">🆓 Free Forever 永久免費</span>
+        <span class="badge">🏛️ Official HK Gov Data 政府官方數據</span>
+        <span class="badge">⚡ No Bandwidth Cost 無頻寬成本</span>
+      </div>
+    </div>
+    
+    <!-- Why Section -->
+    <section>
+      <h3>Why I Built This · 我為什麼做這個</h3>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px;">
+        <div>
+          <h4 style="margin-bottom: 12px;">English</h4>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            I created Hong Kong Open Map for the <strong>vibe coding</strong> community – developers who build for fun, for learning, or for side projects.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-top: 12px;">
+            <strong>The problem:</strong> Google Maps is expensive. Sometimes you just want to show your company's location on a contact page. But when traffic grows, you hit API limits and face unexpected bills.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-top: 12px;">
+            <strong>The solution:</strong> Use official government tiles from the Lands Department. It's free, fast, accurate, and you don't pay for bandwidth – the government hosts the tiles.
+          </p>
+        </div>
+        <div>
+          <h4 style="margin-bottom: 12px;">中文</h4>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            我為 <strong>vibe coding</strong> 社群創建了香港開放地圖 – 那些為興趣、學習或 side project 而編程的開發者。
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-top: 12px;">
+            <strong>問題：</strong>Google Maps 太貴了。有時你只是想在聯絡頁面顯示公司位置，但當流量增長，你就會超過 API 限制，面對意想不到的賬單。
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-top: 12px;">
+            <strong>解決方案：</strong>使用地政總署官方圖磚。免費、快速、準確，而且你不需要付頻寬費用 – 政府負責託管圖磚。
+          </p>
+        </div>
+      </div>
+      
+      <div style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; margin-top: 32px;">
+        <p style="margin: 0; font-size: 0.95rem;"><strong>Who is this for? 適合誰用？</strong></p>
+        <p style="color: var(--text-secondary); margin-top: 8px; margin-bottom: 0;">React developers, bloggers, WordPress users, small business owners – anyone who needs a simple Hong Kong map without the hassle of API keys or usage limits.</p>
+        <p style="color: var(--text-secondary); margin-top: 4px; margin-bottom: 0;">React 開發者、blogger、WordPress 用戶、小商戶 – 任何需要簡單香港地圖而不想煩惱 API 金鑰或使用限制的人。</p>
+      </div>
+    </section>
+    
+    <!-- Installation -->
+    <section>
+      <h3>Installation · 安裝</h3>
+      
+      <div class="install-grid">
+        <div class="install-option" onclick="copyToClipboard('npm install hong-kong-open-map')">
+          <div class="label"># npm</div>
+          <code><span class="cmd">npm install</span> <span class="pkg">hong-kong-open-map</span></code>
+        </div>
+        <div class="install-option" onclick="copyToClipboard('yarn add hong-kong-open-map')">
+          <div class="label"># yarn</div>
+          <code><span class="cmd">yarn add</span> <span class="pkg">hong-kong-open-map</span></code>
+        </div>
+        <div class="install-option" onclick="copyToClipboard('pnpm add hong-kong-open-map')">
+          <div class="label"># pnpm</div>
+          <code><span class="cmd">pnpm add</span> <span class="pkg">hong-kong-open-map</span></code>
+        </div>
+        <div class="install-option" onclick="copyToClipboard('bun add hong-kong-open-map')">
+          <div class="label"># bun</div>
+          <code><span class="cmd">bun add</span> <span class="pkg">hong-kong-open-map</span></code>
+        </div>
+      </div>
+      
+      <h4>CDN / Direct HTML Usage</h4>
+      <div class="code-block">
+        <div class="code-header">
+          <span class="filename">index.html</span>
+          <button class="copy-btn" onclick="copyCode('cdn-code')">copy</button>
+        </div>
+        <pre><code id="cdn-code"><span class="cmt">&lt;!-- 1. Include MapLibre GL --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="attr">href</span>=<span class="str">"https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="str">"https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+
+<span class="cmt">&lt;!-- 2. Include hong-kong-open-map --&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="str">"https://unpkg.com/hong-kong-open-map/dist/vanilla.umd.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+
+<span class="cmt">&lt;!-- 3. Create map container --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="str">"map"</span> <span class="attr">style</span>=<span class="str">"width: 100%; height: 500px;"</span><span class="tag">&gt;&lt;/div&gt;</span>
+
+<span class="cmt">&lt;!-- 4. Initialize map --&gt;</span>
+<span class="tag">&lt;script&gt;</span>
+  <span class="kw">const</span> map = <span class="kw">new</span> <span class="fn">HKMap</span>(<span class="str">'map'</span>, {
+    <span class="prop">center</span>: [<span class="num">114.1694</span>, <span class="num">22.3193</span>],
+    <span class="prop">zoom</span>: <span class="num">12</span>,
+    <span class="prop">language</span>: <span class="str">'zh'</span>,
+    <span class="prop">theme</span>: <span class="str">'light'</span>
+  });
+<span class="tag">&lt;/script&gt;</span></code></pre>
+      </div>
+    </section>
+    
+    <!-- React Usage -->
+    <section>
+      <h3>React / TypeScript 使用方法</h3>
+      
+      <div class="code-block">
+        <div class="code-header">
+          <span class="filename">App.tsx</span>
+          <button class="copy-btn" onclick="copyCode('react-code')">copy</button>
+        </div>
+        <pre><code id="react-code"><span class="kw">import</span> { HKMap, HKMarker } <span class="kw">from</span> <span class="str">'hong-kong-open-map'</span>;
+<span class="cmt">// CSS is auto-imported, no separate import needed!</span>
+
+<span class="kw">export default function</span> <span class="fn">App</span>() {
+  <span class="kw">return</span> (
+    <span class="punc">&lt;</span><span class="fn">HKMap</span>
+      <span class="prop">center</span>=<span class="punc">{</span>[<span class="num">114.1694</span>, <span class="num">22.3193</span>]<span class="punc">}</span>
+      <span class="prop">zoom</span>=<span class="punc">{</span><span class="num">12</span><span class="punc">}</span>
+      <span class="prop">language</span>=<span class="str">"zh"</span>
+      <span class="prop">theme</span>=<span class="str">"light"</span>
+      <span class="prop">showZoomControl</span>
+      <span class="prop">showScaleControl</span>
+    <span class="punc">&gt;</span>
+      <span class="punc">&lt;</span><span class="fn">HKMarker</span>
+        <span class="prop">position</span>=<span class="punc">{</span>[<span class="num">114.1694</span>, <span class="num">22.3193</span>]<span class="punc">}</span>
+        <span class="prop">title</span>=<span class="str">"Victoria Harbour 維多利亞港"</span>
+      <span class="punc">/&gt;</span>
+    <span class="punc">&lt;/</span><span class="fn">HKMap</span><span class="punc">&gt;</span>
+  );
+}</code></pre>
+      </div>
+    </section>
+    
+    <!-- Live Demo -->
+    <section>
+      <h3>Live Demo · 實時演示</h3>
+      
+      <div class="demo-container">
+        <div class="demo-map" id="demo-map"></div>
+        <div class="demo-controls">
+          <div class="control-row">
+            <span class="control-label">theme <code>string</code></span>
+            <select id="ctrl-theme" onchange="updateDemo()">
+              <option value="light">"light"</option>
+              <option value="dark">"dark"</option>
+            </select>
+          </div>
+          <div class="control-row">
+            <span class="control-label">language <code>string</code></span>
+            <select id="ctrl-lang" onchange="updateDemo()">
+              <option value="zh">"zh"</option>
+              <option value="en">"en"</option>
+            </select>
+          </div>
+          <div class="control-row">
+            <span class="control-label">zoom <code>number</code></span>
+            <select id="ctrl-zoom" onchange="updateDemo()">
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12" selected>12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+            </select>
+          </div>
+          <div class="control-row">
+            <span class="control-label">showLabels <code>boolean</code></span>
+            <input type="checkbox" id="ctrl-labels" checked onchange="updateDemo()">
+          </div>
+          <div class="control-row">
+            <span class="control-label">showZoomControl <code>boolean</code></span>
+            <input type="checkbox" id="ctrl-zoomctrl" checked onchange="updateDemo()">
+          </div>
+          <div class="control-row">
+            <span class="control-label">labelScale <code>number</code></span>
+            <input type="range" id="ctrl-scale" min="0.5" max="2" step="0.1" value="1" onchange="updateDemo()">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Pin Placer Tool -->
+    <section>
+      <h3>Pin Placer Tool · 標記工具</h3>
+      <p style="color: var(--text-secondary); margin-bottom: 24px; margin-top: -12px;">Click on the map to place pins. Export coordinates for use in your app. 點擊地圖放置標記，導出座標到你的應用程式。</p>
+      
+      <div class="tool-section">
+        <div class="tool-map" id="pin-map">
+          <div class="map-status">
+            <div class="status-badge" id="pin-mode-badge">
+              <span class="status-dot"></span>
+              <span>Pin Mode: OFF</span>
+            </div>
+            <div class="status-badge" id="pan-lock-badge">
+              <span class="status-dot"></span>
+              <span>Pan: Unlocked</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tool-panel">
+          <div class="panel-header">
+            <span>Pin Settings 標記設定</span>
+            <button class="btn danger" onclick="clearAllPins()">Clear All</button>
+          </div>
+          
+          <div class="panel-body">
+            <div class="tool-controls">
+              <div class="tool-row">
+                <span class="tool-label">Pin Mode<small>Click map to add pin</small></span>
+                <div class="btn-group">
+                  <button class="btn" id="btn-pin-off" onclick="setPinMode(false)">OFF</button>
+                  <button class="btn" id="btn-pin-on" onclick="setPinMode(true)">ON</button>
+                </div>
+              </div>
+              
+              <div class="tool-row">
+                <span class="tool-label">Lock Pan<small>Disable map dragging</small></span>
+                <div class="btn-group">
+                  <button class="btn active" id="btn-pan-unlock" onclick="setLockPan(false)">Unlock</button>
+                  <button class="btn" id="btn-pan-lock" onclick="setLockPan(true)">Lock</button>
+                </div>
+              </div>
+              
+              <div class="tool-row">
+                <span class="tool-label">Pin Color</span>
+                <input type="color" id="pin-color" value="#000000" />
+              </div>
+              
+              <div class="tool-row">
+                <span class="tool-label">Pin Icon</span>
+                <div class="icon-selector">
+                  <button class="icon-option active" data-icon="pin" onclick="selectIcon(this, 'pin')">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  </button>
+                  <button class="icon-option" data-icon="circle" onclick="selectIcon(this, 'circle')">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8"/></svg>
+                  </button>
+                  <button class="icon-option" data-icon="star" onclick="selectIcon(this, 'star')">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  </button>
+                  <button class="icon-option" data-icon="flag" onclick="selectIcon(this, 'flag')">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="panel-header" style="border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+              <span>Pins (<span id="pin-count">0</span>)</span>
+              <button class="btn" onclick="exportPins()">Export JSON</button>
+            </div>
+            
+            <div class="pins-list" id="pins-list">
+              <div class="pins-list-empty">No pins yet. Enable Pin Mode and click on the map.</div>
+            </div>
+            
+            <div class="coords-output">
+              <code id="coords-preview">// Coordinates will appear here\n[]</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- API Reference -->
+    <section>
+      <h3>API Reference · 參數參考</h3>
+      
+      <h4>HKMapProps</h4>
+      <table class="api-table">
+        <thead>
+          <tr>
+            <th style="width: 180px;">Property</th>
+            <th style="width: 200px;">Type</th>
+            <th style="width: 140px;">Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="prop-name">center</td>
+            <td class="type">[number, number]</td>
+            <td class="default">[114.17, 22.32]</td>
+            <td class="desc">Map center [lng, lat] in WGS84</td>
+          </tr>
+          <tr>
+            <td class="prop-name">zoom</td>
+            <td class="type">number</td>
+            <td class="default">11</td>
+            <td class="desc">Initial zoom level</td>
+          </tr>
+          <tr>
+            <td class="prop-name">minZoom</td>
+            <td class="type">number</td>
+            <td class="default">10</td>
+            <td class="desc">Minimum zoom level</td>
+          </tr>
+          <tr>
+            <td class="prop-name">maxZoom</td>
+            <td class="type">number</td>
+            <td class="default">15</td>
+            <td class="desc">Maximum zoom level</td>
+          </tr>
+          <tr>
+            <td class="prop-name">theme</td>
+            <td class="type">'light' | 'dark' | 'auto'</td>
+            <td class="default">'light'</td>
+            <td class="desc">Map color scheme</td>
+          </tr>
+          <tr>
+            <td class="prop-name">language</td>
+            <td class="type">'zh' | 'en'</td>
+            <td class="default">'zh'</td>
+            <td class="desc">Label language</td>
+          </tr>
+          <tr>
+            <td class="prop-name">showLabels</td>
+            <td class="type">boolean</td>
+            <td class="default">true</td>
+            <td class="desc">Show place and street labels</td>
+          </tr>
+          <tr>
+            <td class="prop-name">labelScale</td>
+            <td class="type">number</td>
+            <td class="default">1.0</td>
+            <td class="desc">Label size multiplier (0.5–2.0)</td>
+          </tr>
+          <tr>
+            <td class="prop-name">showZoomControl</td>
+            <td class="type">boolean</td>
+            <td class="default">true</td>
+            <td class="desc">Show +/− zoom buttons</td>
+          </tr>
+          <tr>
+            <td class="prop-name">showScaleControl</td>
+            <td class="type">boolean</td>
+            <td class="default">false</td>
+            <td class="desc">Show scale bar</td>
+          </tr>
+          <tr>
+            <td class="prop-name">showNavigationControl</td>
+            <td class="type">boolean</td>
+            <td class="default">false</td>
+            <td class="desc">Show compass</td>
+          </tr>
+          <tr>
+            <td class="prop-name">showFullscreenControl</td>
+            <td class="type">boolean</td>
+            <td class="default">false</td>
+            <td class="desc">Show fullscreen button</td>
+          </tr>
+          <tr>
+            <td class="prop-name">width</td>
+            <td class="type">string | number</td>
+            <td class="default">'100%'</td>
+            <td class="desc">Container width</td>
+          </tr>
+          <tr>
+            <td class="prop-name">height</td>
+            <td class="type">string | number</td>
+            <td class="default">'400px'</td>
+            <td class="desc">Container height</td>
+          </tr>
+          <tr>
+            <td class="prop-name">onLoad</td>
+            <td class="type">(map) =&gt; void</td>
+            <td class="default">—</td>
+            <td class="desc">Callback when map loads</td>
+          </tr>
+          <tr>
+            <td class="prop-name">onClick</td>
+            <td class="type">(event) =&gt; void</td>
+            <td class="default">—</td>
+            <td class="desc">Callback on map click</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h4>HKMarkerProps</h4>
+      <table class="api-table">
+        <thead>
+          <tr>
+            <th style="width: 180px;">Property</th>
+            <th style="width: 200px;">Type</th>
+            <th style="width: 140px;">Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="prop-name">id</td>
+            <td class="type">string</td>
+            <td class="default">required</td>
+            <td class="desc">Unique identifier</td>
+          </tr>
+          <tr>
+            <td class="prop-name">position</td>
+            <td class="type">[number, number]</td>
+            <td class="default">required</td>
+            <td class="desc">Marker coordinates [lng, lat]</td>
+          </tr>
+          <tr>
+            <td class="prop-name">title</td>
+            <td class="type">string</td>
+            <td class="default">—</td>
+            <td class="desc">Tooltip text</td>
+          </tr>
+          <tr>
+            <td class="prop-name">popup</td>
+            <td class="type">string | ReactNode</td>
+            <td class="default">—</td>
+            <td class="desc">Popup content</td>
+          </tr>
+          <tr>
+            <td class="prop-name">color</td>
+            <td class="type">string</td>
+            <td class="default">'#000000'</td>
+            <td class="desc">Marker color</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <!-- Why Choose Section -->
+    <section>
+      <h3>Why Choose Hong Kong Open Map? · 為什麼選擇香港開放地圖？</h3>
+      <p style="color: var(--text-secondary); margin-bottom: 8px; margin-top: -12px;">The best free alternative to Google Maps for Hong Kong. 香港最佳的免費 Google Maps 替代方案。</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>🆓 100% Free · 完全免費</h4>
+          <p>No API keys, no usage limits, no hidden costs. Open source under MIT license.</p>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 4px;">無需 API 金鑰、無使用限制、無隱藏費用。MIT 開源授權。</p>
+        </div>
+        <div class="feature-card">
+          <h4>🏛️ Official Data · 官方數據</h4>
+          <p>Uses official vector tiles from Hong Kong Lands Department (地政總署).</p>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 4px;">使用香港地政總署官方矢量圖磚，最準確的香港地圖數據。</p>
+        </div>
+        <div class="feature-card">
+          <h4>🌐 Bilingual Labels · 雙語標籤</h4>
+          <p>Switch between Traditional Chinese and English labels.</p>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 4px;">切換繁體中文和英文標籤，適合本地用戶和遊客。</p>
+        </div>
+        <div class="feature-card">
+          <h4>⚡ High Performance · 高效能</h4>
+          <p>Built on MapLibre GL JS with WebGL rendering. Smooth 60fps animations.</p>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 4px;">基於 MapLibre GL JS 和 WebGL 渲染，流暢 60fps 動畫。</p>
+        </div>
+        <div class="feature-card">
+          <h4>🔧 Developer Friendly · 開發者友善</h4>
+          <p>TypeScript, React, Vanilla JS. Works with Next.js, Vite, and more.</p>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 4px;">支援 TypeScript、React、Vanilla JS，兼容 Next.js、Vite 等工具。</p>
+        </div>
+        <div class="feature-card">
+          <h4>📱 Mobile Ready · 手機適配</h4>
+          <p>Responsive design, touch gestures, pinch-to-zoom. Works great on iOS, Android.</p>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 4px;">響應式設計、觸控手勢、捏合縮放。支援 iOS、Android。</p>
+        </div>
+      </div>
+      
+      <h4 style="margin-top: 40px;">Coming Soon · 即將推出</h4>
+      <p style="color: var(--text-secondary); margin-bottom: 16px;">More frameworks on the way! 更多框架支援即將推出！</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <span class="badge">Vue.js</span>
+        <span class="badge">Angular</span>
+        <span class="badge">Solid.js</span>
+        <span class="badge">Svelte</span>
+      </div>
+      
+      <h4 style="margin-top: 40px;">Comparison · 比較</h4>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature 功能</th>
+            <th>Hong Kong Open Map</th>
+            <th>Google Maps</th>
+            <th>Leaflet + OSM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cost 費用</td>
+            <td><span class="check">✓</span> Free 免費</td>
+            <td><span class="cross">✗</span> Pay per request 按請求收費</td>
+            <td><span class="check">✓</span> Free 免費</td>
+          </tr>
+          <tr>
+            <td>API Key 金鑰</td>
+            <td><span class="check">✓</span> No 不需要</td>
+            <td><span class="cross">✗</span> Yes 需要</td>
+            <td><span class="check">✓</span> No 不需要</td>
+          </tr>
+          <tr>
+            <td>HK Accuracy 香港準確度</td>
+            <td><span class="check">✓</span> Official 官方數據</td>
+            <td>Good 良好</td>
+            <td>Variable 不穩定</td>
+          </tr>
+          <tr>
+            <td>Chinese 中文標籤</td>
+            <td><span class="check">✓</span> Native TC 原生繁體</td>
+            <td><span class="check">✓</span> Yes 有</td>
+            <td>Limited 有限</td>
+          </tr>
+          <tr>
+            <td>Bandwidth 頻寬</td>
+            <td><span class="check">✓</span> Gov hosted 政府託管</td>
+            <td><span class="cross">✗</span> Counts to limit 計入限額</td>
+            <td><span class="check">✓</span> Free 免費</td>
+          </tr>
+          <tr>
+            <td>React Component</td>
+            <td><span class="check">✓</span> Built-in 內置</td>
+            <td>Third-party 第三方</td>
+            <td>Third-party 第三方</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section>
+      <h3>Frequently Asked Questions</h3>
+      <p style="color: var(--text-secondary); margin-bottom: 24px; margin-top: -12px;">常見問題解答</p>
+      
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Is Hong Kong Open Map free to use? 可以免費使用嗎？</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, Hong Kong Open Map is completely free and open source under the MIT license. The map tiles are provided by the Hong Kong Lands Department at no cost. You can use it for personal and commercial projects without paying any fees.</p>
+            <p style="margin-top: 12px;">是的，香港開放地圖完全免費，採用 MIT 開源授權。地圖圖磚由香港地政總署免費提供。無論個人或商業項目均可免費使用。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Do I need an API key? 需要 API 金鑰嗎？</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>No API key is required. Unlike Google Maps which requires registration and API keys, you can use Hong Kong Open Map immediately by just installing the package. This makes it perfect for prototyping and quick projects.</p>
+            <p style="margin-top: 12px;">不需要。與 Google Maps 不同，使用香港開放地圖無需註冊或申請 API 金鑰，安裝套件後即可使用。非常適合快速原型開發。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Can I use it for commercial projects? 可用於商業項目嗎？</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, both the library (MIT license) and the government map tiles can be used for commercial projects. The only requirement is to include the Lands Department attribution, which is automatically added by the component.</p>
+            <p style="margin-top: 12px;">可以，本庫（MIT 授權）及政府地圖圖磚均可用於商業項目。唯一要求是顯示地政總署版權聲明，組件會自動添加。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What's the difference from Google Maps? 與 Google Maps 有何分別？</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Hong Kong Open Map uses official government vector tiles specifically designed for Hong Kong, is completely free with no API key required, and offers the most accurate data for Hong Kong locations. Google Maps requires API keys, has usage limits and costs, but offers global coverage and additional services like Street View.</p>
+            <p style="margin-top: 12px;">香港開放地圖使用專為香港設計的官方矢量圖磚，完全免費且無需 API 金鑰，提供最準確的香港地點資料。Google Maps 需要 API 金鑰，有使用限制和費用，但提供全球覆蓋和街景等額外服務。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Does it support Chinese labels? 支援中文標籤嗎？</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Hong Kong Open Map fully supports Traditional Chinese (繁體中文) labels. You can switch between Chinese and English using the <code>language</code> prop. The labels include street names, district names, landmarks, and all geographic features.</p>
+            <p style="margin-top: 12px;">完全支援！可使用 <code>language</code> 屬性切換繁體中文和英文標籤。包括街道名稱、地區名稱、地標及所有地理特徵。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What frameworks are supported? 支援哪些框架？</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Hong Kong Open Map supports React (with full TypeScript support), Vanilla JavaScript, and can be embedded via iFrame. It works seamlessly with Next.js, Vite, Create React App, and all modern build tools. The library is tree-shakeable for optimal bundle size.</p>
+            <p style="margin-top: 12px;">支援 React（完整 TypeScript 支援）、原生 JavaScript，亦可透過 iFrame 嵌入。兼容 Next.js、Vite、Create React App 及所有現代構建工具。庫支援 tree-shaking 以優化打包大小。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>How accurate is the map data? 地圖數據有多準確？</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>The map data comes directly from the Hong Kong Lands Department (地政總署), the official government agency responsible for surveying and mapping in Hong Kong. This is the same data source used by the government's own applications, ensuring the highest accuracy for Hong Kong locations.</p>
+            <p style="margin-top: 12px;">地圖數據直接來自香港地政總署，即負責香港測量和製圖的官方政府機構。這與政府自身應用程式使用的數據來源相同，確保香港位置的最高準確度。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Can I add custom markers and popups? 可以添加自定義標記嗎？</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! The library includes <code>HKMarker</code> component for adding markers with custom colors, icons, and popup content. You can pass React components as popup content for full customization. Use the Pin Placer Tool above to generate coordinates easily.</p>
+            <p style="margin-top: 12px;">可以！庫包含 <code>HKMarker</code> 組件，支援自定義顏色、圖標和彈出內容。可傳入 React 組件作為彈出內容以完全自定義。使用上方的標記工具可輕鬆生成座標。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <div class="footer-links">
+        <a href="https://github.com/wangwailok/hong-kong-open-map">GitHub</a>
+        <a href="https://www.npmjs.com/package/hong-kong-open-map">npm</a>
+        <a href="https://api.portal.hkmapservice.gov.hk/disclaimer">Lands Department</a>
+        <a href="https://www.wangwailok.com/">Author</a>
+      </div>
+      <p>Created by <a href="https://www.wangwailok.com/">Lok Wang</a> · Map data © Lands Department, HKSAR Government · MIT License</p>
+    </footer>
+  </div>
+  
+  <script src="https://unpkg.com/maplibre-gl@4.0.0/dist/maplibre-gl.js"></script>
+  <script>
+    const RASTER_TILE = 'https://mapapi.geodata.gov.hk/gs/api/v1.0.0/xyz/basemap/wgs84/{z}/{x}/{y}.png';
+    const RASTER_LABEL_ZH = 'https://mapapi.geodata.gov.hk/gs/api/v1.0.0/xyz/label/hk/tc/wgs84/{z}/{x}/{y}.png';
+    const RASTER_LABEL_EN = 'https://mapapi.geodata.gov.hk/gs/api/v1.0.0/xyz/label/hk/en/wgs84/{z}/{x}/{y}.png';
+    
+    let map = null;
+    
+    function createStyle(lang = 'zh', showLabels = true) {
+      const style = {
+        version: 8,
+        sources: {
+          'hk-basemap': {
+            type: 'raster',
+            tiles: [RASTER_TILE],
+            tileSize: 256,
+            attribution: '<a href="https://www.wangwailok.com/">wangwailok.com</a> | © <a href="https://api.portal.hkmapservice.gov.hk/disclaimer">Lands Department</a>'
+          }
+        },
+        layers: [
+          { id: 'basemap', type: 'raster', source: 'hk-basemap' }
+        ]
+      };
+      
+      if (showLabels) {
+        style.sources['hk-label'] = {
+          type: 'raster',
+          tiles: [lang === 'en' ? RASTER_LABEL_EN : RASTER_LABEL_ZH],
+          tileSize: 256
+        };
+        style.layers.push({ id: 'labels', type: 'raster', source: 'hk-label' });
+      }
+      
+      return style;
+    }
+    
+    function initMap() {
+      map = new maplibregl.Map({
+        container: 'demo-map',
+        style: createStyle('zh', true),
+        center: [114.1694, 22.3193],
+        zoom: 12,
+        minZoom: 10,
+        maxZoom: 18
+      });
+      
+      map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+      map.addControl(new maplibregl.ScaleControl(), 'bottom-left');
+      
+      new maplibregl.Marker({ color: '#000000' })
+        .setLngLat([114.1694, 22.3193])
+        .setPopup(new maplibregl.Popup().setHTML('<strong>Victoria Harbour</strong><br>維多利亞港'))
+        .addTo(map);
+    }
+    
+    function updateDemo() {
+      if (!map) return;
+      
+      const lang = document.getElementById('ctrl-lang').value;
+      const showLabels = document.getElementById('ctrl-labels').checked;
+      const showZoom = document.getElementById('ctrl-zoomctrl').checked;
+      const zoom = parseInt(document.getElementById('ctrl-zoom').value);
+      
+      map.setStyle(createStyle(lang, showLabels));
+      map.setZoom(zoom);
+      
+      const navCtrl = document.querySelector('#demo-map .maplibregl-ctrl-top-right');
+      if (navCtrl) navCtrl.style.display = showZoom ? 'block' : 'none';
+    }
+    
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text);
+      const el = event.currentTarget;
+      el.style.borderColor = '#22c55e';
+      setTimeout(() => el.style.borderColor = '', 1000);
+    }
+    
+    function copyCode(id) {
+      const code = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(code);
+      const btn = event.target;
+      btn.textContent = 'copied!';
+      setTimeout(() => btn.textContent = 'copy', 2000);
+    }
+    
+    document.addEventListener('DOMContentLoaded', initMap);
+    
+    // ========== Pin Placer Tool ==========
+    let pinMap = null;
+    let pinMode = false;
+    let panLocked = false;
+    let selectedIcon = 'pin';
+    let pins = [];
+    let pinMarkers = [];
+    
+    function initPinMap() {
+      pinMap = new maplibregl.Map({
+        container: 'pin-map',
+        style: createStyle('zh', true),
+        center: [114.1694, 22.3193],
+        zoom: 12,
+        minZoom: 10,
+        maxZoom: 18
+      });
+      
+      pinMap.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+      pinMap.addControl(new maplibregl.ScaleControl(), 'bottom-left');
+      
+      pinMap.on('click', (e) => {
+        if (!pinMode) return;
+        const color = document.getElementById('pin-color').value;
+        addPin(e.lngLat.lng, e.lngLat.lat, color, selectedIcon);
+      });
+    }
+    
+    function setPinMode(enabled) {
+      pinMode = enabled;
+      const mapEl = document.getElementById('pin-map');
+      const badge = document.getElementById('pin-mode-badge');
+      
+      document.getElementById('btn-pin-on').classList.toggle('active', enabled);
+      document.getElementById('btn-pin-off').classList.toggle('active', !enabled);
+      
+      mapEl.classList.toggle('pin-mode', enabled);
+      badge.classList.toggle('active', enabled);
+      badge.querySelector('span:last-child').textContent = 'Pin Mode: ' + (enabled ? 'ON' : 'OFF');
+    }
+    
+    function setLockPan(locked) {
+      panLocked = locked;
+      const mapEl = document.getElementById('pin-map');
+      const badge = document.getElementById('pan-lock-badge');
+      
+      document.getElementById('btn-pan-lock').classList.toggle('active', locked);
+      document.getElementById('btn-pan-unlock').classList.toggle('active', !locked);
+      
+      mapEl.classList.toggle('locked', locked);
+      badge.classList.toggle('active', locked);
+      badge.querySelector('.status-dot').classList.toggle('locked', locked);
+      badge.querySelector('span:last-child').textContent = 'Pan: ' + (locked ? 'Locked' : 'Unlocked');
+      
+      if (pinMap) {
+        if (locked) {
+          pinMap.dragPan.disable();
+          pinMap.scrollZoom.disable();
+          pinMap.doubleClickZoom.disable();
+          pinMap.touchZoomRotate.disable();
+        } else {
+          pinMap.dragPan.enable();
+          pinMap.scrollZoom.enable();
+          pinMap.doubleClickZoom.enable();
+          pinMap.touchZoomRotate.enable();
+        }
+      }
+    }
+    
+    function selectIcon(el, icon) {
+      document.querySelectorAll('.icon-option').forEach(opt => opt.classList.remove('active'));
+      el.classList.add('active');
+      selectedIcon = icon;
+    }
+    
+    function createMarkerElement(color, icon) {
+      const el = document.createElement('div');
+      el.style.width = '32px';
+      el.style.height = '32px';
+      el.style.display = 'flex';
+      el.style.alignItems = 'center';
+      el.style.justifyContent = 'center';
+      el.style.cursor = 'pointer';
+      
+      const icons = {
+        pin: `<svg width="28" height="28" viewBox="0 0 24 24" fill="${color}"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>`,
+        circle: `<svg width="20" height="20" viewBox="0 0 24 24" fill="${color}"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/></svg>`,
+        star: `<svg width="24" height="24" viewBox="0 0 24 24" fill="${color}"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`,
+        flag: `<svg width="24" height="24" viewBox="0 0 24 24" fill="${color}"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>`
+      };
+      
+      el.innerHTML = icons[icon] || icons.pin;
+      return el;
+    }
+    
+    function addPin(lng, lat, color, icon) {
+      const id = 'pin-' + Date.now();
+      const pin = { id, lng, lat, color, icon };
+      pins.push(pin);
+      
+      const el = createMarkerElement(color, icon);
+      const marker = new maplibregl.Marker({ element: el, anchor: icon === 'pin' ? 'bottom' : 'center' })
+        .setLngLat([lng, lat])
+        .addTo(pinMap);
+      
+      pinMarkers.push({ id, marker });
+      updatePinsList();
+    }
+    
+    function removePin(id) {
+      const idx = pins.findIndex(p => p.id === id);
+      if (idx > -1) pins.splice(idx, 1);
+      
+      const markerIdx = pinMarkers.findIndex(m => m.id === id);
+      if (markerIdx > -1) {
+        pinMarkers[markerIdx].marker.remove();
+        pinMarkers.splice(markerIdx, 1);
+      }
+      updatePinsList();
+    }
+    
+    function flyToPin(id) {
+      const pin = pins.find(p => p.id === id);
+      if (pin && pinMap) {
+        pinMap.flyTo({ center: [pin.lng, pin.lat], zoom: 15 });
+      }
+    }
+    
+    function clearAllPins() {
+      pinMarkers.forEach(m => m.marker.remove());
+      pinMarkers = [];
+      pins = [];
+      updatePinsList();
+    }
+    
+    function updatePinsList() {
+      const list = document.getElementById('pins-list');
+      const count = document.getElementById('pin-count');
+      const preview = document.getElementById('coords-preview');
+      
+      count.textContent = pins.length;
+      
+      if (pins.length === 0) {
+        list.innerHTML = '<div class="pins-list-empty">No pins yet. Enable Pin Mode and click on the map.</div>';
+        preview.textContent = '// Coordinates will appear here\n[]';
+        return;
+      }
+      
+      list.innerHTML = pins.map((pin, i) => `
+        <div class="pin-item">
+          <div class="pin-icon" style="background: ${pin.color}20; color: ${pin.color};">
+            ${getIconSvg(pin.icon, pin.color)}
+          </div>
+          <div class="pin-info">
+            <div class="pin-coords">[${pin.lng.toFixed(6)}, ${pin.lat.toFixed(6)}]</div>
+            <div class="pin-meta">Pin #${i + 1} · ${pin.icon}</div>
+          </div>
+          <div class="pin-actions">
+            <button class="pin-btn" onclick="flyToPin('${pin.id}')" title="Go to pin">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
+            </button>
+            <button class="pin-btn delete" onclick="removePin('${pin.id}')" title="Delete">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+      `).join('');
+      
+      const coords = pins.map(p => ({ position: [p.lng, p.lat], color: p.color, icon: p.icon }));
+      preview.textContent = '// Export for HKMap markers\n' + JSON.stringify(coords, null, 2);
+    }
+    
+    function getIconSvg(icon, color) {
+      const icons = {
+        pin: `<svg width="14" height="14" viewBox="0 0 24 24" fill="${color}"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>`,
+        circle: `<svg width="14" height="14" viewBox="0 0 24 24" fill="${color}"><circle cx="12" cy="12" r="8"/></svg>`,
+        star: `<svg width="14" height="14" viewBox="0 0 24 24" fill="${color}"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`,
+        flag: `<svg width="14" height="14" viewBox="0 0 24 24" fill="${color}"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>`
+      };
+      return icons[icon] || icons.pin;
+    }
+    
+    function exportPins() {
+      if (pins.length === 0) {
+        alert('No pins to export');
+        return;
+      }
+      const data = pins.map(p => ({ position: [p.lng, p.lat], color: p.color, icon: p.icon }));
+      const json = JSON.stringify(data, null, 2);
+      navigator.clipboard.writeText(json);
+      alert('Pins copied to clipboard!');
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      initPinMap();
+      setPinMode(false);
+    });
+    
+    // FAQ Toggle
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      item.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
