@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hong Kong Open Map Embed</title>
+    <style>
+        body, html, #map {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script type="module">
+        import { HKMap } from '../vanilla/index.ts';
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const lat = parseFloat(urlParams.get('lat')) || 22.3193;
+        const lng = parseFloat(urlParams.get('lng')) || 114.1694;
+        const zoom = parseFloat(urlParams.get('zoom')) || 10;
+        const theme = urlParams.get('theme') || 'auto';
+
+        new HKMap('map', {
+            center: [lng, lat],
+            zoom: zoom,
+            theme: theme
+        });
+    </script>
+</body>
+</html>

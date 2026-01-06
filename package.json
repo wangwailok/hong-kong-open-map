@@ -1,0 +1,67 @@
+{
+  "name": "hong-kong-open-map",
+  "version": "0.1.0",
+  "description": "Free and open-source map component library for Hong Kong applications using official government vector tiles.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./vanilla": {
+      "import": "./dist/vanilla/index.js",
+      "require": "./dist/vanilla/index.cjs",
+      "types": "./dist/vanilla/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "dev:demo": "vite serve demo --port 3001 --open",
+    "dev:examples": "vite serve . --port 3000",
+    "build": "vite build && tsc",
+    "preview": "vite preview",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,md}\""
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "hong-kong-open-map": "/Users/wangwailok/Documents/GitHub/hong-kong-open-map",
+    "maplibre-gl": "^4.0.0"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.7.0",
+    "vitest": "^1.1.0",
+    "prettier": "^3.1.0",
+    "eslint": "^8.55.0"
+  },
+  "keywords": [
+    "hong-kong",
+    "map",
+    "maplibre",
+    "vector-tiles",
+    "government-data",
+    "react",
+    "vanilla-js"
+  ],
+  "author": "wangwailok",
+  "license": "MIT"
+}

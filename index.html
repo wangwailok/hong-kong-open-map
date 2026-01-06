@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Development Preview - Hong Kong Open Map</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module">
+        import React from 'react';
+        import ReactDOM from 'react-dom/client';
+        import { HKMap, HKMarker, HKPopup } from './src/index.ts';
+
+        function App() {
+            return React.createElement('div', null, [
+                React.createElement('h1', null, 'Hong Kong Open Map Preview'),
+                React.createElement(HKMap, {
+                    height: '600px',
+                    theme: 'auto',
+                    onLoad: (map) => console.log('Map Ready:', map)
+                }, [
+                    React.createElement(HKMarker, {
+                        key: 'marker-1',
+                        id: 'marker-1',
+                        position: [114.1694, 22.3193],
+                        title: 'Victoria Harbour'
+                    }),
+                    React.createElement(HKPopup, {
+                        key: 'popup-1',
+                        position: [114.1694, 22.3193]
+                    }, React.createElement('div', null, [
+                        React.createElement('h3', null, 'Victoria Harbour'),
+                        React.createElement('p', null, 'Welcome to Hong Kong!')
+                    ]))
+                ])
+            ]);
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(
+            React.createElement(App)
+        );
+    </script>
+</body>
+</html>

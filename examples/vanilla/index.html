@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla JS Demo - Hong Kong Open Map</title>
+    <!-- Use local dist files for demo -->
+    <link rel="stylesheet" href="../../dist/style.css">
+    <style>
+        body { margin: 0; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        #map-container { 
+            width: 100%; 
+            height: 600px; 
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .controls { margin-bottom: 20px; display: flex; gap: 10px; }
+        button { padding: 8px 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Vanilla JS Demo</h1>
+    <div class="controls">
+        <button id="btn-light">Light Theme</button>
+        <button id="btn-dark">Dark Theme</button>
+        <button id="btn-add-marker">Add Random Marker</button>
+    </div>
+    <div id="map-container"></div>
+
+    <script type="module">
+        import { HKMap } from '../../dist/vanilla/index.js';
+
+        const map = new HKMap('map-container', {
+            theme: 'light',
+            zoom: 11,
+            center: [114.17, 22.33] // Near Kowloon
+        });
+
+        // Add an initial marker
+        map.addMarker({
+            id: 'tsim-sha-tsui',
+            position: [114.1722, 22.2988],
+            title: 'Tsim Sha Tsui',
+            popup: '<h3>Tsim Sha Tsui</h3><p>A major tourist and shopping hub.</p>'
+        });
+
+        document.getElementById('btn-light').onclick = () => map.setTheme('light');
+        document.getElementById('btn-dark').onclick = () => map.setTheme('dark');
+        
+        document.getElementById('btn-add-marker').onclick = () => {
+            const id = 'marker-' + Math.random().toString(36).substr(2, 9);
+            const lng = 114.1 + Math.random() * 0.2;
+            const lat = 22.2 + Math.random() * 0.3;
+            
+            map.addMarker({
+                id,
+                position: [lng, lat],
+                title: 'New Marker: ' + id,
+                popup: `<strong>Random Location</strong><br>ID: ${id}<br>Lat: ${lat.toFixed(4)}<br>Lng: ${lng.toFixed(4)}`
+            });
+            console.log('Added marker:', id);
+        };
+    </script>
+</body>
+</html>
