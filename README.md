@@ -133,11 +133,37 @@ Perfect for Blogger, WordPress, or simple sites.
 |------|------|---------|-------------|
 | `center` | `[number, number]` | `[114.17, 22.32]` | Map center `[lng, lat]` (WGS84). |
 | `zoom` | `number` | `11` | Initial zoom level (8-19). |
+| `minZoom` | `number` | `10` | Minimum zoom level. |
+| `maxZoom` | `number` | `15` | Maximum zoom level. |
 | `theme` | `'light' \| 'dark' \| 'auto'` | `'light'` | Map color scheme. |
 | `language` | `'zh' \| 'en' \| 'auto'` | `'zh'` | Label language (Traditional Chinese/English). |
 | `markers` | `HKMapMarker[]` | `[]` | Array of marker objects. |
+| `className` | `string` | - | CSS class for the container. |
+| `style` | `CSSProperties` | - | Inline styles for the container. |
+| `width` | `string \| number` | `'100%'` | Container width. |
+| `height` | `string \| number` | `'400px'` | Container height. |
+| `ariaLabel` | `string` | 'Interactive map...' | ARIA label for accessibility. |
+| `tabIndex` | `number` | `0` | Tab index for keyboard navigation. |
+
+### UI Controls & Labels
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
 | `showZoomControl` | `boolean` | `true` | Show +/- zoom buttons. |
-| `onLoad` | `(map: Map) => void` | - | Callback when map finishes loading. |
+| `showNavigationControl`| `boolean` | `false` | Show compass/rotation control. |
+| `showScaleControl` | `boolean` | `false` | Show map scale. |
+| `showFullscreenControl`| `boolean` | `false` | Show fullscreen toggle. |
+| `showAttributionControl`| `boolean` | `true` | Show LandsD attribution. |
+| `showLabels` | `boolean` | `true` | Show/hide place names. |
+| `labelScale` | `number` | `1.0` | Scale factor for labels (0.5 - 2.0). |
+
+### Event Callbacks
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `onLoad` | `(map: Map) => void` | Callback when map finishes loading. |
+| `onClick` | `(event: MapMouseEvent) => void` | Triggered when map is clicked. |
+| `onMarkerClick` | `(marker: HKMapMarker) => void` | Triggered when a marker is clicked. |
 
 ### HKMarker Props
 

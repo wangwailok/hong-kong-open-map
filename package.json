@@ -1,6 +1,6 @@
 {
   "name": "hong-kong-open-map",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "description": "Free and open-source map component library for Hong Kong applications using official government vector tiles.",
   "type": "module",
   "main": "./dist/index.cjs",
