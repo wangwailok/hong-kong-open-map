@@ -1,6 +1,6 @@
 # Hong Kong Open Map | 香港開放地圖
 
-<img width="636" height="435" alt="image" src="https://github.com/user-attachments/assets/12fae444-7ce4-4c20-a579-b556bac51d3d" />
+![Hong Kong Open Map Demo](https://github.com/user-attachments/assets/12fae444-7ce4-4c20-a579-b556bac51d3d)
 
 **Free, open-source map component for Hong Kong • 免費開源香港地圖組件**
 
